@@ -1,5 +1,6 @@
 package es.onirim.core;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -100,5 +101,9 @@ public class Mano {
 			LOG.debug("Carta extraida: " + carta);
 		}
 		return carta;
+	}
+
+	public List<Carta> getCartas() {
+		return Arrays.asList(mano);
 	}
 }
