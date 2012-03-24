@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<project name="onirim-core" default="all" basedir=".">
+
+	<property file="build.properties" />
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="test.classes.dir" value="${test.build.dir}/classes" />
+
+	<path id="compile.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="test.classpath">
+		<pathelement location="${test.classes.dir}" />
+		<pathelement location="${classes.dir}" />
+		<path refid="compile.classpath" />
+	</path>
+
+	<target name="all" depends="clean,jar" />
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="jar" depends="compile, copy-resources">
+		<mkdir dir="${distribution.dir}" />
+
+		<jar destFile="${distribution.dir}/${app.name}.jar">
+			<fileset dir="${classes.dir}" />
+		</jar>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+
+		<javac srcdir="${source.dir}" destdir="${classes.dir}" debug="on" deprecation="on">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<target name="copy-resources">
+		<copy todir="${classes.dir}">
+			<fileset dir="${resources.dir}">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile-test" depends="compile">
+		<mkdir dir="${test.build.dir}" />
+		<mkdir dir="${test.classes.dir}" />
+
+		<javac srcdir="${test.source.dir}" destdir="${test.classes.dir}" debug="on" deprecation="on">
+			<classpath refid="test.classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile-test">
+		<junit>
+			<classpath refid="test.classpath" />
+			<formatter type="plain" usefile="false" />
+			<test name="es.onirim.core.TestMazo" />
+			<test name="es.onirim.core.TestLaberinto" />
+		</junit>
+	</target>
+</project>
