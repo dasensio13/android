@@ -10,7 +10,7 @@ public class PuertasConseguidas {
 	private static final Integer TOTAL_PUERTAS_COLOR = 2;
 	private static final Integer TOTAL_PUERTAS = 8;
 
-	List<Carta> puertas = new ArrayList<Carta>();
+	private List<Carta> puertas = new ArrayList<Carta>();
 
 	public void insertarPuerta(Carta carta) {
 		if (carta.isPuerta()) {
@@ -45,5 +45,9 @@ public class PuertasConseguidas {
 			&& numPuertas(Color.AZUL) == TOTAL_PUERTAS_COLOR
 			&& numPuertas(Color.MARRON) == TOTAL_PUERTAS_COLOR;
 		return victoria;
+	}
+
+	public List<Carta> getPuertas() {
+		return puertas;
 	}
 }

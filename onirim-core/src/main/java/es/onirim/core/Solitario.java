@@ -2,10 +2,15 @@ package es.onirim.core;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import es.onirim.core.Carta.Color;
 import es.onirim.core.Carta.Tipo;
 
 public class Solitario {
+
+	private static final Log LOG = LogFactory.getLog(Solitario.class);
 
 	private Mazo mazo = null;
 	private Laberinto laberinto = null;
@@ -99,7 +104,13 @@ public class Solitario {
 	}
 
 	public Carta robarMazo() {
-		return mazo.robar();
+		Carta carta = null;
+		if (isVictoria() || isDerrota()) {
+			LOG.warn("No robamos carta porque el juego a terminado");
+		} else {
+			carta = mazo.robar();
+		}
+		return carta;
 	}
 
 	public void rellenarMano(Carta carta) {
@@ -126,11 +137,23 @@ public class Solitario {
 		mazo.barajar();
 	}
 
-	public int getNumHabitacionesMazo() {
-		return mazo.getNumHabitaciones();
-	}
-
 	public Integer getNumCartasMazo() {
 		return mazo.getNumCartas();
+	}
+
+	public boolean isDerrota() {
+		return mazo.getNumHabitaciones()==0;
+	}
+
+	public List<Carta> getDescartes() {
+		return descartes.getPila();
+	}
+
+	public List<Carta> getPuertasObtenidas() {
+		return puertas.getPuertas();
+	}
+
+	public List<Carta> getCartasLaberinto() {
+		return laberinto.getLaberinto();
 	}
 }
