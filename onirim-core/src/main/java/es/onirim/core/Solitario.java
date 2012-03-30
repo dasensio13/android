@@ -45,6 +45,10 @@ public class Solitario {
 		return mano.cogerCarta(index);
 	}
 
+	public Carta getCartaMano(int index) {
+		return mano.getCarta(index);
+	}
+
 	public boolean puedoInsertarCartaLaberinto(Carta carta) {
 		return laberinto.puedoInsertarCarta(carta);
 	}
@@ -105,12 +109,16 @@ public class Solitario {
 
 	public Carta robarMazo() {
 		Carta carta = null;
-		if (isVictoria() || isDerrota()) {
-			LOG.warn("No robamos carta porque el juego a terminado");
+		if (isFinal()) {
+			LOG.warn("No robamos carta porque el juego ha terminado");
 		} else {
 			carta = mazo.robar();
 		}
 		return carta;
+	}
+
+	public boolean isFinal() {
+		return isVictoria() || isDerrota();
 	}
 
 	public void rellenarMano(Carta carta) {
