@@ -26,11 +26,10 @@ public class TestMano {
 	@Test
 	public void TestRobarCompletar() {
 		mano = new Mano(mazo.robarMano());
-		mano.seleccionar(3);
-		mano.cogerCartaSeleccionada();
+		mano.cogerCarta(3);
 		Assert.assertFalse("Mano no completa", mano.isCompleta());
-		mano.rellenarMano(mazo.robar());
+		int posicion = mano.rellenarMano(mazo.robar());
 		Assert.assertTrue("Mano completa", mano.isCompleta());
-		
+		Assert.assertTrue("Posicion correcta", posicion == 3);
 	}
 }

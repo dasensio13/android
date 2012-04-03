@@ -22,12 +22,13 @@ public class Mano {
 		}
 	}
 
-	public void rellenarMano(Carta carta) {
+	public int rellenarMano(Carta carta) {
 		if (LOG.isDebugEnabled()) {
 			LOG.debug("Insertamos carta en la mano: " + carta);
 		}
 		boolean colocada = false;
-		for (int i=0; i<mano.length && !colocada; i++) {
+		int i;
+		for (i=0; i<mano.length && !colocada; i++) {
 			if (mano[i]==null) {
 				mano[i] = carta;
 				colocada = true;
@@ -38,6 +39,11 @@ public class Mano {
 		}
 		if (!colocada) {
 			throw new RuntimeException("Se ha intentado rellenar una mano ya completa");
+		} else {
+			if (LOG.isDebugEnabled()) {
+				LOG.debug("Posicion final: " + i);
+			}
+			return i-1;
 		}
 	}
 

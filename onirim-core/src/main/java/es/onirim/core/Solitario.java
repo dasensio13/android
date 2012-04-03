@@ -121,8 +121,8 @@ public class Solitario {
 		return isVictoria() || isDerrota();
 	}
 
-	public void rellenarMano(Carta carta) {
-		mano.rellenarMano(carta);
+	public int rellenarMano(Carta carta) {
+		return mano.rellenarMano(carta);
 	}
 
 	public void insertarLimbo(Carta carta) {
