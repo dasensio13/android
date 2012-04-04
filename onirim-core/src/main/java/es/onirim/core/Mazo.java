@@ -157,8 +157,8 @@ public class Mazo {
 		}
 	}
 
-	public void insertar(List<Carta> cartas) {
-		mazo.addAll(cartas);
+	public void insertarEncima(List<Carta> cartas) {
+		mazo.addAll(0, cartas);
 	}
 
 	private void insertLaberinto(List<Carta> mazo, Color color) {

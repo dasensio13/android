@@ -6,12 +6,13 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import es.onirim.core.Carta.Color;
+
 public class Mano {
 
 	private static final Log LOG = LogFactory.getLog(Mano.class);
 
 	private Carta[] mano = new Carta[5];
-	private int selectedIndex = -1;
 
 	public Mano(List<Carta> cartas) {
 		for (Carta carta : cartas) {
@@ -60,28 +61,6 @@ public class Mano {
 		return completa;
 	}
 
-	public void seleccionar(int index) {
-		if (index>0 && index<mano.length) {
-			selectedIndex = index;
-			if (LOG.isDebugEnabled()) {
-				LOG.debug("Carta seleccionada: " + index);
-			}
-		} else {
-			throw new RuntimeException("Se ha intentado seleccionar una carta fuera de rango: " + index);
-		}
-	}
-
-	public void deseleccionar() {
-		if (LOG.isDebugEnabled()) {
-			LOG.debug("Ninguna carta seleccionada");
-		}
-		selectedIndex = -1;
-	}
-
-	public Carta cogerCartaSeleccionada() {
-		return cogerCarta(selectedIndex);
-	}
-
 	public Carta getCarta(int index) {
 		Carta carta = null;
 		if (index>=0 && index<mano.length) {
@@ -111,5 +90,47 @@ public class Mano {
 
 	public List<Carta> getCartas() {
 		return Arrays.asList(mano);
+	}
+
+	public boolean containsLlave() {
+		for (Carta carta : getCartas()) {
+			if (carta.isLlave()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean containsLlave(Color color) {
+		for (Carta carta : getCartas()) {
+			if (carta!=null && carta.isLlave() && carta.isColor(color)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public Carta cogerCarta(Carta carta) {
+		int index = getIndexOf(carta);
+		if (index>=0 && index<mano.length) {
+			return cogerCarta(index);
+		} else {
+			return null;
+		}
+	}
+
+	private int getIndexOf(Carta carta) {
+		for (int i=0; i<mano.length; i++) {
+			if (mano[i]!=null && mano[i].equals(carta)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public List<Carta> descartar() {
+		List<Carta> cartas = getCartas();
+		mano = new Carta[5];
+		return cartas;
 	}
 }

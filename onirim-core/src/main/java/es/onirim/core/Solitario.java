@@ -1,5 +1,6 @@
 package es.onirim.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -138,7 +139,7 @@ public class Solitario {
 	}
 
 	public void insertarMazo(List<Carta> cartas) {
-		mazo.insertar(cartas);
+		mazo.insertarEncima(cartas);
 	}
 
 	public void barajarMazo() {
@@ -163,5 +164,29 @@ public class Solitario {
 
 	public List<Carta> getCartasLaberinto() {
 		return laberinto.getLaberinto();
+	}
+
+	public boolean tieneLlaveMano() {
+		return mano.containsLlave();
+	}
+
+	public boolean tieneLlaveMano(Color color) {
+		return mano.containsLlave(color);
+	}
+
+	public Carta cogerCartaMano(Carta carta) {
+		return mano.cogerCarta(carta);
+	}
+
+	public List<Carta> descartarMano() {
+		return mano.descartar();
+	}
+
+	public List<Carta> cogerCartasMazo(int numCartas) {
+		List<Carta> cartas = new ArrayList<Carta>();
+		for (int i=0; i<numCartas; i++) {
+			cartas.add(mazo.robar());
+		}
+		return cartas;
 	}
 }
