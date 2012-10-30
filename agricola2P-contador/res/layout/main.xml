@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fondo"
+    android:orientation="vertical">
+
+    <TableLayout
+        style="@style/EstiloTabla">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/jugador1"
+                style="@style/EstiloTitulo"
+                android:layout_column="2"
+                android:text="@string/jugador1"
+	            android:onClick="cambiarNombre" />
+            <TextView
+                android:id="@+id/jugador2"
+                style="@style/EstiloTitulo"
+                android:layout_column="3"
+                android:text="@string/jugador2"
+	            android:onClick="cambiarNombre" />
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_column="1"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/ovejas"
+                    android:src="@drawable/oveja" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/ovejas"
+                    android:src="@drawable/oveja" />
+            </LinearLayout>
+
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j1ovejas"
+                android:layout_column="2" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j2ovejas"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_column="1"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/cerdos"
+                    android:src="@drawable/cerdo" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/cerdos"
+                    android:src="@drawable/cerdo" />
+            </LinearLayout>
+
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j1cerdos"
+                android:layout_column="2" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j2cerdos"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_column="1"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/vacas"
+                    android:src="@drawable/vaca" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/vacas"
+                    android:src="@drawable/vaca" />
+            </LinearLayout>
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j1vacas"
+                android:layout_column="2" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j2vacas"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+
+             <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_column="1"
+                android:layout_gravity="center" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/caballos"
+                    android:src="@drawable/caballo" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/caballos"
+                    android:src="@drawable/caballo" />
+            </LinearLayout>
+
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j1caballos"
+                android:layout_column="2" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j2caballos"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/extra"
+                android:contentDescription="@string/extras"
+                android:layout_column="1"
+				android:layout_height="30dp"
+                android:adjustViewBounds="true" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/oveja"
+                android:contentDescription="@string/ovejas"
+                android:layout_column="1"
+				android:layout_height="20dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j1extraovejas"
+                android:layout_column="2" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j2extraovejas"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/cerdo"
+                android:contentDescription="@string/cerdos"
+                android:layout_column="1"
+				android:layout_height="25dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j1extracerdos"
+                android:layout_column="2" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j2extracerdos"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/vaca"
+                android:contentDescription="@string/vacas"
+                android:layout_column="1"
+				android:layout_height="25dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j1extravacas"
+                android:layout_column="2" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j2extravacas"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/caballo"
+                android:contentDescription="@string/caballos"
+                android:layout_column="1"
+				android:layout_height="25dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j1extracaballos"
+                android:layout_column="2" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j2extracaballos"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/extra"
+                android:contentDescription="@string/otros"
+                android:layout_column="1"
+				android:layout_height="30dp"
+                android:adjustViewBounds="true" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/ampliacion"
+                android:contentDescription="@string/ampliaciones"
+                android:layout_column="1"
+				android:layout_height="25dp"
+				android:layout_width="40dp"
+                android:layout_gravity="center_vertical" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j1ampliaciones"
+                android:layout_column="2" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j2ampliaciones"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView android:src="@drawable/edificio"
+                android:contentDescription="@string/edificios"
+                android:layout_column="1"
+				android:layout_height="25dp"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_vertical" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j1edificios"
+                android:layout_column="2" />
+            <EditText
+                android:inputType="number"
+                style="@style/EstiloInput"
+                android:id="@+id/j2edificios"
+                android:layout_column="3" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/EstiloTitulo"
+                android:layout_column="1"
+                android:text="@string/calcular"
+                android:onClick="calcular"
+                android:layout_gravity="center"
+                android:width="80dp" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j1total"
+                android:layout_column="2" />
+            <TextView
+                style="@style/EstiloInput"
+                android:id="@+id/j2total"
+                android:layout_column="3" />
+            <TextView
+                style="@style/EstiloTitulo"
+                android:layout_column="4"
+                android:text="@string/total"
+                android:onClick="calcular"
+                android:layout_gravity="center" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="5dp"
+        android:background="#aaa" />
+    
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empate"
+        android:textColor="#000000"
+        android:padding="5dp"
+        android:layout_gravity="center" />
+</LinearLayout>

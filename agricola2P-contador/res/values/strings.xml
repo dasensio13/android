@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agricola 2P Counter</string>
+
+    <string name="jugador1">Player 1</string>
+    <string name="jugador2">Player 2</string>
+    <string name="cerdos">Pigs</string>
+    <string name="ovejas">Sheeps</string>
+    <string name="vacas">Cows</string>
+    <string name="caballos">Horses</string>
+    <string name="extras">Extra Points</string>
+    <string name="otros">More</string>
+    <string name="ampliaciones">Added</string>
+    <string name="edificios">Buildings</string>
+	<string name="gana">Winner: </string>
+    <string name="empate">DRAW</string>
+    <string name="total">TOTAL</string>
+    <string name="calcular">CALCULATE</string>
+    <string name="valorInicial">0</string>
+
+    <string name="aceptar">OK</string>
+	<string name="cancelar">Cancel</string>
+	<string name="nombre_titulo">Name Change</string>
+	<string name="nombre">Name: </string>
+</resources>

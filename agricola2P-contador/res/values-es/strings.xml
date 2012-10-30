@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contador Agricola 2P</string>
+
+    <string name="jugador1">Jugador 1</string>
+    <string name="jugador2">Jugador 2</string>
+    <string name="cerdos">Cerdos</string>
+    <string name="ovejas">Ovejas</string>
+    <string name="vacas">Vacas</string>
+    <string name="caballos">Caballos</string>
+    <string name="extras">Pts. extra</string>
+    <string name="otros">Otros</string>
+    <string name="ampliaciones">Ampliaciones</string>
+    <string name="edificios">Edificios</string>
+	<string name="gana">Ganador: </string>
+    <string name="empate">EMPATE</string>
+    <string name="total">TOTAL</string>
+    <string name="calcular">CALCULAR</string>
+    <string name="valorInicial">0</string>
+
+    <string name="aceptar">Aceptar</string>
+	<string name="cancelar">Cancelar</string>
+	<string name="nombre_titulo">Cambiar Nombre</string>
+	<string name="nombre">Nombre: </string>
+</resources>
