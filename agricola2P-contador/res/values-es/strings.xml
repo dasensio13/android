@@ -22,4 +22,26 @@
 	<string name="cancelar">Cancelar</string>
 	<string name="nombre_titulo">Cambiar Nombre</string>
 	<string name="nombre">Nombre: </string>
+
+
+	<string name="creditos">Créditos</string>
+	<string name="detalle_creditos">
+	    \nDesarrollador: David Asensio (@dasensio13)
+	    \nDiseñador del juego: Uwe Rosenberg
+		\nAño de publicación: 2012
+		\nBGG: http://www.boardgamegeek.com/boardgame/119890/agricola-all-creatures-big-and-small
+		\n\nVersion 0.1 - 02/11/2012
+	    \n* Desarrollo en fase beta
+	    \n* Posibilidades de futuro:
+	    \n\t- Mejora en la introducción de puntos por expansiones
+	    \n\t- Mejora en la introducción de puntos por edificios
+	    \n\t- Mejora de pantalla de créditos e info
+	</string>
+
+	<string name="instrucciones">Info</string>
+	<string name="detalle_instrucciones">
+	    \n* Puedes cambiar los nombres de los jugadores seleccionandolos.
+	    \n* Debes calcular los puntos por expansiones y edificios manualmente.
+	    \n* Debes pulsar CALCULAR para actualizar los puntos extra, el total y el ganador.
+	</string>
 </resources>

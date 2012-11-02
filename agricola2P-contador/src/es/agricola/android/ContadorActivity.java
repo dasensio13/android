@@ -1,6 +1,5 @@
 package es.agricola.android;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,7 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ContadorActivity extends Activity {
+public class ContadorActivity extends OptionsMenuActivity {
 
 	private static final String TAG = "ContadorActivity";
 
